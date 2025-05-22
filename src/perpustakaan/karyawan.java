@@ -31,7 +31,7 @@ jScrollPane1.getViewport().add(kar,null);
 try {
 con = null;
 Class.forName("com.mysql.jdbc.Driver");
-Connection con =DriverManager.getConnection("jdbc:mysql://127.0.0.1/perpustakaan", "root", "");
+Connection con =DriverManager.getConnection("jdbc:mysql://127.0.0.1/database_perpustakaan", "root", "");
 String sql = "" + "select * from karyawan";
 Statement stat=con.createStatement();
 ResultSet res=stat.executeQuery(sql);
@@ -409,7 +409,7 @@ gaji.setText("0");
         String x=nik.getText();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/perpustakaan", "root", "");
+            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/database_perpustakaan", "root", "");
             Statement stat= conn.createStatement();
             String cari = "select * from karyawan where NIK='"+x+"'";
             ResultSet res=stat.executeQuery(cari);
@@ -445,7 +445,7 @@ gaji.setText("0");
         String x=JOptionPane.showInputDialog(null, "Masukan  NIK!!");
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/perpustakaan", "root", "");
+            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/database_perpustakaan", "root", "");
             Statement stat= conn.createStatement();
             String cari = "select * from karyawan where NIK='"+x+"'";
             ResultSet res=stat.executeQuery(cari);
@@ -478,7 +478,7 @@ gaji.setText("0");
         int coba=JOptionPane.showConfirmDialog(null, "Yakin untuk mengubah data ini?","Confirmation",JOptionPane.YES_NO_OPTION);
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/perpustakaan", "root", "");
+            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/database_perpustakaan", "root", "");
             String sql="update karyawan set NIK=?,Nama=?,Jenis_Kelamin=?,Jabatan=?,Golongan=?,Absen=?, Jumlah_Absen=?,Biaya_Transport=?,Tunjangan=?,Gaji=?, where "+"NIK='"+nik.getText()+"'";
             PreparedStatement st=conn.prepareStatement(sql);
             if(coba==0) {
@@ -507,7 +507,7 @@ gaji.setText("0");
         // TODO add your handling code here:
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/perpustakaan", "root", "");
+            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/database_perpustakaan", "root", "");
             Statement stat= conn.createStatement();
             String sqlnya=("insert into karyawan values ('"
                 +nik.getText()+"','"
@@ -542,7 +542,7 @@ gaji.setText("0");
         String x = nik.getText();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/perpustakaan", "root", "");
+            Connection conn =DriverManager.getConnection("jdbc:mysql://127.0.0.1/database_perpustakaan", "root", "");
             Statement stat= conn.createStatement();
             String sql="delete from karyawan where NIK='"+x+"'";
             stat.executeUpdate(sql);

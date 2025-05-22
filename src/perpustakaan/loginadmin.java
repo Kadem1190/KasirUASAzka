@@ -141,6 +141,11 @@ public class loginadmin extends javax.swing.JFrame {
     new transaksi().show();
     this.dispose();
     }}
+    if(user.getText().equals("Admin1")){
+    if(pass.getText().equals("Karyawan")){
+    new karyawan().show();
+    this.dispose();
+    }}
     }//GEN-LAST:event_loginActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
